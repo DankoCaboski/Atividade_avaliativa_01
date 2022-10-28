@@ -33,8 +33,8 @@ def eh_primo(i):
 
 num = int(input('Informe um número maior ou igual a 50: '))
 if num >= 50:
+    oper  = input('Informe uma operação, H, S ou P: ')
     for i in range(1,num+1):
-
         if oper_h or primeiro_h:
             soma_h+=equacao1(i)
             if not primeiro_h:
@@ -57,13 +57,18 @@ if num >= 50:
             else:
                 soma_s -= equacao2(i)
                 oper_s = True
-        
+
         if eh_primo(i):
             soma_p += i/(cont_2_em_2**3)
             cont_2_em_2 += 2
 
-    print(f'H = {soma_h}')
-    print(f'S = {soma_s}')
-    print(f'P = {soma_p}')
-else:
+    if oper == 'H' or oper == 'h':
+        print(f'H = {soma_h}')
+
+    if oper == 'S' or oper == 's':
+        print(f'S = {soma_s}')
+
+    if oper == 'P' or oper == 'p':
+        print(f'P = {soma_p}')
+if num < 50:
     print(f'{num} é um número invalido')
